@@ -11,9 +11,12 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vee-validate/zod": "^4.7.3",
     "pinia": "^2.0.28",
+    "vee-validate": "^4.7.3",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
