@@ -19,6 +19,7 @@ export async function addTodo(todo:Todo): Promise<Todo> {
 }
 
 export async function editTodo(todoId: string, todo: Todo): Promise<Todo> {
+  delete todo._id;
   return await (
     await fetch(`${BASE_URL}/${todoId}`, {
       method: "PATCH",

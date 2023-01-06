@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import type { Todo } from '@/interfaces/todo.interface';
-import { fetchTodos, addTodo, deleteTodo } from '@/services/todo.service';
+import { fetchTodos, addTodo, deleteTodo, editTodo } from '@/services/todo.service';
 
 const BASE_URL = 'https://restapi.fr/api/todos';
 
@@ -42,8 +42,14 @@ export const useTodos = defineStore('todos', {
             await deleteTodo(todoId);
             this.todos = this.todos.filter((todo) => todo._id !== todoId);
         },
-        //updateTodo
-        //deleteTodo
+        async editTodo(todoId: string, update: Partial<Todo>) {
+            const todoIndex = this.todos.findIndex((todo) => todo._id === todoId);
+            const updatedTodo = await editTodo(todoId, {
+                ...this.todos[todoIndex],
+                ...update
+            } as Todo);
+            this.todos[todoIndex] = updatedTodo;
+        }
     }
 });
 
