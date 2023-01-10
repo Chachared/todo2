@@ -25,12 +25,12 @@ const input = ref<string>(props.content);
             />
             <button 
                 @click="$emit('update', input)"
-                class="btn btn-success rounded-pill"
+                class="btn btn-success rounded-pill mx-2"
             >éditer
             </button>
             <button 
                 @click="$emit('cancel')"
-                class="btn btn-danger rounded-pill"
+                class="btn btn-danger rounded-pill mx-2"
             >annuler
             </button>
         </div>
