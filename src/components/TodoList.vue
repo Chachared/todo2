@@ -28,11 +28,11 @@ function deleteTodo(todoId: string) {
 <template>
     <div class="container">
         <h1 class="my-2">TodoList Vue3</h1>
-        <h2 class="mb-5">Pinia / Axios / VeeValidate / Zod</h2>
+        <h2 class="mb-5">avec Pinia</h2>
         <div class="border rounded-pill text-center my-3">FILTRES</div>
         <div class="border rounded-pill text-center my-3">
             <input v-model="input" type="text" class="rounded-pill ps-2" />
-            <button @click="addTodo" class="btn btn-primary rounded-pill mx-3 my-3">add</button>
+            <button @click="addTodo" class="btn btn-primary rounded-pill mx-3 my-3">ajouter</button>
         </div>
         <div class="my-3">
             <div v-if="todosStore.isLoading">
@@ -53,11 +53,11 @@ function deleteTodo(todoId: string) {
                         <button 
                             @click.stop="editTodo(todo._id!, { editMode: true })"
                             class="btn btn-success rounded-pill mx-3"
-                        >update</button>
+                        >éditer</button>
                         <button 
                             @click.stop="deleteTodo(todo._id!)"
                             class="btn btn-danger rounded-pill mx-1"
-                        >delete</button>
+                        >supprimer</button>
                     </div>
                     <div v-else>
                         <TodoForm 
